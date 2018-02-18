@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3bW-Zk-Bl7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Currency Converter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Currency Converter" id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConvert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite aqui o valor a ser convertido" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaw-Ga-eQu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lPI-xB-W9v"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IKb-dS-oSR">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversionCell" id="fGu-vN-paR" customClass="ConversionCell" customModule="CurrencyConvert" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGu-vN-paR" id="3Yf-NC-1jc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CurrencyKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQl-Lc-ZM1">
+                                                    <rect key="frame" x="15" y="11" width="98.5" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversion Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZz-yn-Ipi">
+                                                    <rect key="frame" x="222" y="11" width="138" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BQl-Lc-ZM1" firstAttribute="top" secondItem="3Yf-NC-1jc" secondAttribute="topMargin" id="0tY-RC-Voc"/>
+                                                <constraint firstItem="BQl-Lc-ZM1" firstAttribute="bottom" secondItem="3Yf-NC-1jc" secondAttribute="bottomMargin" id="D9D-Qi-gM9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fZz-yn-Ipi" secondAttribute="trailing" id="EQv-Mf-szQ"/>
+                                                <constraint firstItem="fZz-yn-Ipi" firstAttribute="bottom" secondItem="3Yf-NC-1jc" secondAttribute="bottomMargin" id="Ix0-qf-MyK"/>
+                                                <constraint firstItem="fZz-yn-Ipi" firstAttribute="top" secondItem="3Yf-NC-1jc" secondAttribute="topMargin" id="KVZ-4S-3jq"/>
+                                                <constraint firstItem="BQl-Lc-ZM1" firstAttribute="leading" secondItem="3Yf-NC-1jc" secondAttribute="leadingMargin" id="cz7-2a-34k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblConversionResult" destination="fZz-yn-Ipi" id="D0a-16-HsU"/>
+                                            <outlet property="lblCurrencyKey" destination="BQl-Lc-ZM1" id="4jA-0b-mrb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oaw-Ga-eQu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3pX-PO-5cq"/>
+                            <constraint firstItem="Oaw-Ga-eQu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FQC-9Y-oWL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IKb-dS-oSR" secondAttribute="bottom" id="Htt-eu-ZUB"/>
+                            <constraint firstItem="IKb-dS-oSR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I58-We-tRs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oaw-Ga-eQu" secondAttribute="trailing" id="eLW-JT-yos"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IKb-dS-oSR" secondAttribute="trailing" id="jGQ-iB-41b"/>
+                            <constraint firstItem="IKb-dS-oSR" firstAttribute="top" secondItem="Oaw-Ga-eQu" secondAttribute="bottom" constant="20" id="rsR-Ov-MNM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="LIy-Vc-zXE"/>
+                    <connections>
+                        <outlet property="tblConversion" destination="IKb-dS-oSR" id="ZSL-i6-GxA"/>
+                        <outlet property="txtValue" destination="Oaw-Ga-eQu" id="nOr-ou-rs4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oMb-28-SzU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3bW-Zk-Bl7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qSF-up-cBy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TW3-J7-sx8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o66-V1-hjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="134"/>
         </scene>
     </scenes>
 </document>
